@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #11d452;
+  --border: #0c2619;
+  --bg: #061d11;
+  --text: #f9f9f9;
+  --gray: #9ca3af;
+}
+
+ul {
+  list-style: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: var(--bg);
+  color: #f9f9f9;
+  font-family: "Inter", sans-serif;
+}
+h1 {
+  font-size: 24px;
+}
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  margin-bottom: 16px;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+.nav__campers {
+  color: var(--primary-color);
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  margin-bottom: 16px;
+}
+.search__icon {
+  color: var(--primary-color);
+}
+.search__input {
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+.search__input::placeholder {
+  color: var(--gray);
+}
+
+.campers__title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+.campers__list {
+  margin: 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.camper {
+  display: flex;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+  padding: 12px;
+}
+.camper__photo img {
+  width: 36px;
+  height: 36px;
+  border-radius: 20%;
+}
+.camper__details {
+  margin-top: 4px;
+}
+.camper__details {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+.camper__text {
+  font-size: 12px;
+  color: var(--gray);
+}
