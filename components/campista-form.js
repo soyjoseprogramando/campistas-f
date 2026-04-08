@@ -46,7 +46,8 @@ class CampistaForm extends HTMLElement {
           background-color: var(--background);
           border-radius: 16px 16px 0 0;
           transform: translateY(100%);
-          transition: transform 0.3s ease;
+          transition: transform 0.3s ease, visibility 0.3s ease;
+          visibility: hidden;
           z-index: 102;
           max-height: 90vh;
           display: flex;
@@ -56,6 +57,7 @@ class CampistaForm extends HTMLElement {
 
         .bottom-sheet.active {
           transform: translateY(0);
+          visibility: visible;
         }
 
         .bottom-sheet__header {
@@ -207,6 +209,7 @@ class CampistaForm extends HTMLElement {
           .bottom-sheet.active {
             transform: translate(-50%, -50%) scale(1);
             opacity: 1;
+            visibility: visible;
           }
 
           .bottom-sheet__content {
