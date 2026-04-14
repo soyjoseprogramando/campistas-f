@@ -1,6 +1,6 @@
 class CampistaCard extends HTMLElement {
   static get observedAttributes() {
-    return ['nombre', 'apellido', 'identificacion', 'rango', 'edad', 'foto'];
+    return ['nombre', 'apellido', 'identificacion', 'rango', 'numero', 'tipo-sangre', 'contacto-emergencia', 'edad', 'foto'];
   }
 
   constructor() {
@@ -10,6 +10,8 @@ class CampistaCard extends HTMLElement {
 
   connectedCallback() {
     this.render();
+    this.
+    initEventListeners();
   }
 
   attributeChangedCallback() {
@@ -40,6 +42,36 @@ class CampistaCard extends HTMLElement {
 
   get foto() {
     return this.getAttribute('foto') || 'https://i.pravatar.cc/150?img=1';
+  }
+
+  get numero() {
+    return this.getAttribute('numero') || '';
+  }
+
+  get tipoSangre() {
+    return this.getAttribute('tipo-sangre') || 'O+';
+  }
+
+  get contactoEmergencia() {
+    return this.getAttribute('contacto-emergencia') || '';
+  }
+
+  initEventListeners() {
+    this.addEventListener('click', () => {
+      this.dispatchEvent(new CustomEvent('card-click', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          nombres: this.nombre.split(' ')[0] || '',
+          apellidos: this.apellido,
+          identificacion: this.identificacion,
+          tipoSangre: this.tipoSangre,
+          rango: this.rango,
+          numero: this.numero,
+          contactoEmergencia: this.contactoEmergencia
+        }
+      }));
+    });
   }
 
   render() {

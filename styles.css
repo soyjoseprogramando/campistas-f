@@ -124,8 +124,6 @@ header {
 
   .main-wrapper {
     margin-left: 220px; /* Sidebar width */
-    display: flex;
-    justify-content: center;
     min-height: 100vh;
     padding: 24px;
   }
